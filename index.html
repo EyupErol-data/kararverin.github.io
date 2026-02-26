@@ -19,8 +19,12 @@
         <div class="container">
             <div class="logo">
                 <span class="logo-icon">
-                    <img src="assets/logo.jpg" alt="KararVerin Logo" class="brand-logo">
+                    <img src="assets/Kararverinlogo2.png" alt="KararVerin Logo" class="brand-logo">
                 </span>
+                <button class="lang-toggle mobile-only" aria-label="Toggle Language">
+                    <span class="active-lang">EN</span><span class="separator">/</span><span
+                        class="inactive-lang">TR</span>
+                </button>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -47,7 +51,11 @@
                 <a href="#capabilities">Capabilities</a>
                 <a href="#faq">FAQ</a>
                 <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                <button class="lang-toggle custom-desktop" aria-label="Toggle Language">
+                    <span class="active-lang">EN</span><span class="separator">/</span><span
+                        class="inactive-lang">TR</span>
+                </button>
+                <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Toggle Dark Mode">
                     <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" style="display:none;">
@@ -75,10 +83,10 @@
     <section class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Stop Overpaying for BI. <br />Start Seeing Your Data Clearly.</h1>
-                <p class="subtitle">We build custom, highly-secure, interactive data experiences tailored exactly to
-                    your scale. From zero-licensing custom apps for growing SMEs, to fully optimized SAP Analytics Cloud
-                    architectures for the enterprise.</p>
+                <h1>Stop Overpaying for BI. <br />Start Interacting with Your Data.</h1>
+                <p class="subtitle">We build secure, tool-agnostic data applications tailored perfectly to your scale
+                    and budget. From high-performance open-source sandboxes for SMEs to optimized SAP Analytics Cloud
+                    architectures for the enterprise—with zero ongoing licensing fees for our custom solutions.</p>
                 <div class="hero-actions">
                     <a href="#services" class="btn btn-primary">Explore Solutions</a>
                     <a href="#contact" class="btn btn-secondary">Talk to an Expert</a>
@@ -98,8 +106,8 @@
                         </svg>
                     </div>
                     <h3>Tool-Agnostic Flexibility</h3>
-                    <p>We leverage powerful open-source tools to eliminate licensing fees, or maximize the ROI on your
-                        existing enterprise stack. Pick the engine; we build the performance.</p>
+                    <p>Choose your engine. We leverage open-source tools or your existing enterprise stack. Pick the
+                        engine; we build the performance.</p>
                 </div>
                 <div class="value-card">
                     <div class="card-icon">
@@ -110,8 +118,8 @@
                         </svg>
                     </div>
                     <h3>Enterprise-Grade Security</h3>
-                    <p>Strict, scalable security protocols whether deployed inside your private cloud or optimized
-                        within your enterprise software. Your data never leaves your environment.</p>
+                    <p>Strict, scalable security protocols deployed on-premise or in your private cloud. Your data never
+                        leaves your environment.</p>
                 </div>
                 <div class="value-card">
                     <div class="card-icon">
@@ -120,9 +128,9 @@
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                         </svg>
                     </div>
-                    <h3>Actionable Insights, Fast</h3>
-                    <p>Launch "application-like" interactive dashboards that look brilliant, load fast, and deliver
-                        immediate strategic value for your decision-makers.</p>
+                    <h3>Live, Interactive Experiences</h3>
+                    <p>Go beyond static charts. Launch application-like dashboards that look brilliant, load fast, and
+                        deliver immediate strategic value.</p>
                 </div>
             </div>
         </div>
@@ -133,9 +141,17 @@
         <div class="container section-header">
             <h2>Productized Consulting Tiers</h2>
             <p>Tailored architecture and targeted insights, built precisely for your organizational scale.</p>
+            <div class="scale-toggle-container fade-in">
+                <span class="scale-label active" id="label-sme">I represent an SME</span>
+                <label class="scale-switch">
+                    <input type="checkbox" id="scale-toggle">
+                    <span class="scale-slider round"></span>
+                </label>
+                <span class="scale-label" id="label-enterprise">I represent an Enterprise</span>
+            </div>
         </div>
 
-        <div class="container pricing-grid">
+        <div class="container pricing-grid" id="pricing-grid">
             <!-- Tier 1 -->
             <div class="pricing-card">
                 <div class="tier-label">Ideal for SMEs</div>
@@ -155,7 +171,7 @@
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg> Secure deployment on your servers</li>
                 </ul>
-                <a href="#contact" class="btn btn-outline">Explore Open-Source</a>
+                <a href="#contact" class="btn btn-outline" style="margin-bottom: 2rem;">Explore Open-Source</a>
             </div>
 
             <!-- Tier 2 -->
@@ -245,16 +261,27 @@
                                 <!-- Simulated SAP-style UI -->
                                 <div class="mockup-header">
                                     <div class="mockup-title">Rapid Financial Analysis Overview</div>
+                                    <button class="btn btn-primary btn-sm btn-interact">Interact Live</button>
                                 </div>
                                 <div class="mockup-body mockup-grid-finance">
-                                    <div class="kpi-card"><span class="kpi-label">Earnings per Share</span><span
-                                            class="kpi-value">$57.24</span><span class="kpi-trend positive">+1.2%</span>
+                                    <div class="kpi-card interactive-hover">
+                                        <span class="kpi-label">Earnings per Share</span>
+                                        <span class="kpi-value">$57.24</span><span
+                                            class="kpi-trend positive">+1.2%</span>
+                                        <div class="css-tooltip">Q3 EPS Forecast: $58.10</div>
                                     </div>
-                                    <div class="kpi-card"><span class="kpi-label">Operating Income</span><span
-                                            class="kpi-value">$20,250 k</span><span
-                                            class="kpi-trend positive">+3.4%</span></div>
-                                    <div class="chart-card chart-bar"></div>
-                                    <div class="chart-card chart-line"></div>
+                                    <div class="kpi-card interactive-hover">
+                                        <span class="kpi-label">Operating Income</span>
+                                        <span class="kpi-value">$20,250 k</span><span
+                                            class="kpi-trend positive">+3.4%</span>
+                                        <div class="css-tooltip">YTD Plan Variance: -0.5%</div>
+                                    </div>
+                                    <div class="chart-card chart-bar interactive-hover">
+                                        <div class="css-tooltip">Net Revenue: $14M | Margin: 62%</div>
+                                    </div>
+                                    <div class="chart-card chart-line interactive-hover">
+                                        <div class="css-tooltip">Monthly Trend: Upward Trajectory</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -280,14 +307,24 @@
                         </div>
                         <div class="showcase-visual">
                             <div class="dashboard-mockup">
-                                <div class="mockup-header">
+                                <div class="mockup-header" style="justify-content: space-between; display: flex;">
                                     <div class="mockup-title">Workforce Analytics Dashboard</div>
+                                    <div class="mini-toggle">
+                                        <span class="active">Full-Time</span> | <span>Contractors</span>
+                                    </div>
                                 </div>
-                                <div class="mockup-body mockup-grid-hr">
-                                    <div class="chart-card chart-donut"></div>
-                                    <div class="chart-card chart-bar-horizontal"></div>
-                                    <div class="kpi-card wide"><span class="kpi-label">Total Headcount</span><span
-                                            class="kpi-value">1,452</span></div>
+                                <div class="mockup-body mockup-grid-hr dynamic-data-container">
+                                    <div class="chart-card chart-donut interactive-hover">
+                                        <div class="css-tooltip">Engineering: 45% | Sales: 30%</div>
+                                    </div>
+                                    <div class="chart-card chart-bar-horizontal interactive-hover">
+                                        <div class="css-tooltip">Avg Tenure: 4.2 Years</div>
+                                    </div>
+                                    <div class="kpi-card wide interactive-hover">
+                                        <span class="kpi-label">Total Headcount</span>
+                                        <span class="kpi-value dynamic-val">1,452</span>
+                                        <div class="css-tooltip">Click mini-toggle above to swap view</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -312,13 +349,19 @@
                             </div>
                         </div>
                         <div class="showcase-visual">
-                            <div class="dashboard-mockup">
+                            <div class="dashboard-mockup dashboard-interactive-iframe">
                                 <div class="mockup-header">
                                     <div class="mockup-title">Supply Chain Logistics & Performance</div>
+                                    <button class="btn btn-primary btn-sm btn-interact">Launch Sandbox Modal</button>
                                 </div>
-                                <div class="mockup-body mockup-grid-supply">
-                                    <div class="chart-card chart-map"></div>
-                                    <div class="chart-card chart-line-multi"></div>
+                                <div class="mockup-body mockup-grid-supply interactive-sandbox"
+                                    style="padding: 0; display: block; position: relative;">
+                                    <div class="sandbox-overlay">
+                                        <p>Interactive Map Simulation</p>
+                                        <button class="btn btn-secondary btn-sm">Click to Play</button>
+                                    </div>
+                                    <img src="assets/supply chain dashboard.jpg" alt="Supply Chain Dashboard"
+                                        style="width: 100%; height: auto; display: block; opacity: 0.8;">
                                 </div>
                             </div>
                         </div>
@@ -365,14 +408,13 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header">
-                        Our data is extremely messy and siloed. How do you handle that?
+                        Will embedding these interactive dashboards slow down our systems?
                         <span class="icon">+</span>
                     </button>
                     <div class="accordion-content">
-                        <p><strong>Data engineering is part of our DNA.</strong> We build robust ETL (Extract,
-                            Transform, Load) pipelines to automatically sanitize, standardize, and structure your messy
-                            data before it ever hits a visual dashboard. You see clear insights; we handle the plumbing.
-                        </p>
+                        <p><strong>Not at all.</strong> We optimize queries and utilize aggressive caching and semantic
+                            layers to ensure data is served rapidly. The interactive elements you see are lightweight
+                            and highly performant, designed specifically not to impact your core system latency.</p>
                     </div>
                 </div>
             </div>
